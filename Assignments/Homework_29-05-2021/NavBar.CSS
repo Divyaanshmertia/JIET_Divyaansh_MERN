@@ -1,0 +1,20 @@
+nav {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        background-color: aquamarine;
+      }
+
+      @media  screen and (min-width: 700px) {
+        nav { flex-direction: row; }
+      }
+
+      nav a{
+        flex: 1;
+        text-align: center;
+        margin: 0.25em;
+        padding: 0.25em;
+        border: 1px solid #ddd;
+        text-decoration: none;
+        color: #555;
+      }
