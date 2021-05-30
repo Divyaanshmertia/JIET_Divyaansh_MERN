@@ -5,7 +5,8 @@ nav {
     display: flex;
     justify-content:left;
     flex-direction: column;
-    
+    border-color: black;
+    box-shadow: 0 0 15px #000000;
     
   }
 
