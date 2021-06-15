@@ -68,6 +68,20 @@ function clearCalculator () {
   operatorKeys.forEach(key => { key.dataset.state = '' })
 }
 
+var textbox = document.getElementById("txtBox")
 
+function Click(e) {
+  var but = e.target;
+  if (but.innerText != "=" && but.innerText != "delete") {
+     if (but.innerText == ".") {
+        if (!textbox.value.includes('.') && textbox.value != "") {
+           textbox.value += "."
+        }
+     }
+     else{
+        textbox.value += but.innerText
+     }
+  }
+}
 
 
