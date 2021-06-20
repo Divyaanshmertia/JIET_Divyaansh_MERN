@@ -77,21 +77,21 @@ exports.postBlog = (req, res) => {
     })
 }
 
-exports.getblogByid = (req, res) => {
-    let id = req.params.userId;
-    id = mongoose.Types.ObjectId(id);
-    Blog.findOne({ _id: id }).then((post) => {
-        if (post) {
-            console.log("Successfull")
-            return res.status(200).send(post);
+// exports.getblogByid = (req, res) => {
+//     let id = req.params.userId;
+//     id = mongoose.Types.ObjectId(id);
+//     Blog.findOne({ _id: id }).then((post) => {
+//         if (post) {
+//             console.log("Successfull")
+//             return res.status(200).send(post);
         
-        }
-    }).catch((error) => {
-        console.log("Error")
-        return res.status(404).send("error");
+//         }
+//     }).catch((error) => {
+//         console.log("Error")
+//         return res.status(404).send("error");
  
-    });
-};
+//     });
+// };
 
 
 
@@ -101,7 +101,7 @@ exports.getblog = (req, res) => {
     userId = mongoose.Types.ObjectId(userId);
     Blog.find({ userId }).then((blogPost) => {
         if (blogPost.length === 0) {
-            return res.status(404).send("54456error")
+            return res.status(404).send(`no blog was posted by user with userId :${userId}` )
         
         }console.log("Successfull")
         return res.status(200).send(blogPost);
