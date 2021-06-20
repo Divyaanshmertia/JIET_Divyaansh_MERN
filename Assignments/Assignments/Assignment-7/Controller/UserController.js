@@ -39,7 +39,7 @@ exports.login = (req, res) => {
     })
   
 };
-
+// get's user by _id from User Model
 exports.getById =  (req, res) => {
     let id = req.params.id;
     id = mongoose.Types.ObjectId(id);
@@ -94,7 +94,7 @@ exports.postBlog = (req, res) => {
 // };
 
 
-
+// get's all blogs written by a single user with userId of blo model
 
 exports.getblog = (req, res) => {
     let  userId  = req.params.id;
