@@ -58,6 +58,10 @@ exports.getById =  (req, res) => {
 
 exports.postBlog = (req, res) => {
     let { heading, blog } = req.body;
+    if (!req.headers.token) {
+      console.error("No token was sent");
+      return res.status(403).send("Invalid token");
+    }
     let decodedToken = JWT.verify(req.headers.token, "ssshhhItsASecretDontTellAnyone"); 
     let userId = decodedToken[ Object.keys(decodedToken)[0]];
     userId = mongoose.Types.ObjectId(userId);
